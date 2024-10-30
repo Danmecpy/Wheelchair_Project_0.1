@@ -12,7 +12,7 @@ RH_ASK driver;
 RHReliableDatagram gerente(driver, TX_ADDRESS);
 
 uint8_t data[2];
-
+// texte do github
 void setup() {
   Serial.begin(9600);
   if (!gerente.init()) {
