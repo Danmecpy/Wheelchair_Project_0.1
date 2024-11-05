@@ -41,6 +41,16 @@ void loop() {
   Serial.print(" Velocidade: ");
   Serial.println(velocidade);
 
+  if (direcao>132 && velocidade == 131 ){
+    moverFrente(direcao);
+  }
+  else if (direcao<129 && velocidade == 131 ){
+    moverTras(direcao);
+  }
+  else {
+    pararMotores();
+  }
+
  }
 
 void moverFrente(int velocidade) {
@@ -56,12 +66,12 @@ void moverFrente(int velocidade) {
 }
 
 void moverTras(int velocidade) {
-  analogWrite(motor1_lpwm, velocidade);
+  analogWrite(motor1_lpwm, velocidade+255);
   digitalWrite(motor1_rpwm, LOW);
   digitalWrite(motor1_le, HIGH);
   digitalWrite(motor1_re,HIGH);
 
-  analogWrite(motor2_lpwm, velocidade);
+  analogWrite(motor2_lpwm, velocidade+255);
   digitalWrite(motor2_rpwm, LOW);
   digitalWrite(motor2_le, HIGH);
   digitalWrite(motor2_re, HIGH);
