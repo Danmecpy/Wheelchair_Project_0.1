@@ -42,10 +42,10 @@ void loop() {
   Serial.println(velocidade);
 
   if (direcao>132 && velocidade == 131 ){
-    moverFrente(direcao);
+    moverTras(direcao);
   }
   else if (direcao<129 && velocidade == 131 ){
-    moverTras(direcao);
+    moverFrente(direcao);
   }
   else if (direcao ==130 && velocidade <131){
     moverDireita(velocidade+130);
