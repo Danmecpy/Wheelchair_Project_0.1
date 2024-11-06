@@ -42,8 +42,7 @@ void setup() {
 void loop() {
   if (gerente.available()) {
     if (gerente.recvfromAck(buf, &tamanho)) {
-      int direcao = buf[0];
-      int velocidade = buf[1];
+    
 
       Serial.print("Recebido - Direção: ");
       Serial.print(direcao);
@@ -60,6 +59,7 @@ void loop() {
     }
   }
 }
+  
 
 void moverFrente(int velocidade) {
   analogWrite(motor1_rpwm, velocidade);

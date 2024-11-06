@@ -1,7 +1,7 @@
 
 
 #define joystick_x A0
-#define joystick_y A2
+#define joystick_y A1
 
 #define motor1_rpwm 10
 #define motor1_lpwm 9
@@ -42,21 +42,14 @@ void loop() {
   Serial.println(velocidade);
 
   if (direcao>132 && velocidade == 131 ){
-    moverTras(direcao);
-  }
-  else if (direcao<129 && velocidade == 131 ){
     moverFrente(direcao);
   }
-  else if (direcao ==130 && velocidade <131){
-    moverDireita(velocidade+130);
-  }
-  else if (direcao == 130 && velocidade >131){
-    moverEsquerda(velocidade-130);
+  else if (direcao<129 && velocidade == 131 ){
+    moverTras(direcao);
   }
   else {
     pararMotores();
   }
-
 
  }
 
